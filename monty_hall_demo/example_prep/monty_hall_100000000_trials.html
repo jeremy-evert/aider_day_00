@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Monty Hall — 100,000,000 Trials</title>
+<style>
+  body   { font-family: system-ui, sans-serif; max-width: 860px;
+            margin: 40px auto; padding: 0 24px; background: #f7f7f7; color: #222; }
+  h1     { color: #2c3e50; margin-bottom: 4px; }
+  h2     { color: #2c3e50; border-bottom: 2px solid #ddd;
+            padding-bottom: 6px; margin-top: 36px; }
+  table  { border-collapse: collapse; width: 100%; margin-top: 12px; }
+  th, td { padding: 9px 14px; text-align: left; border-bottom: 1px solid #ddd; }
+  th     { background: #2c3e50; color: #fff; font-weight: 600; }
+  tr:nth-child(even) { background: #efefef; }
+  .hero  { display: flex; gap: 24px; margin: 24px 0; }
+  .card  { flex: 1; border-radius: 8px; padding: 20px 24px;
+            color: white; text-align: center; }
+  .card h3 { margin: 0 0 6px; font-size: 1rem; opacity: .85; }
+  .card p  { margin: 0; font-size: 2.2rem; font-weight: 700; }
+  .card small { font-size: 0.9rem; opacity: .8; }
+  .stay   { background: #e74c3c; }
+  .switch { background: #27ae60; }
+  .quote  { background: #eaf4fb; border-left: 5px solid #3498db;
+             padding: 14px 20px; margin: 28px 0; font-style: italic; }
+  .warn   { background: #fef9e7; border-left: 5px solid #f1c40f;
+             padding: 14px 20px; margin: 28px 0; }
+  .footer { color: #aaa; font-size: 0.82em; margin-top: 48px; }
+  td:nth-child(5) { width: 220px; }
+</style>
+</head>
+<body>
+
+<h1>🎭 Monty Hall Simulation</h1>
+<p style="color:#666">2026-08-29 21:37 &nbsp;·&nbsp; <strong>100,000,000 trials</strong></p>
+
+<div class="hero">
+  <div class="card stay">
+    <h3>Always Stay</h3>
+    <p>33.3%</p>
+    <small>33,339,418 wins out of 100,000,000</small>
+  </div>
+  <div class="card switch">
+    <h3>Always Switch</h3>
+    <p>66.7%</p>
+    <small>66,660,582 wins out of 100,000,000</small>
+  </div>
+</div>
+
+<div class="warn">
+  <strong>Margin of error (95% confidence): ±0.0%</strong><br>
+  With 100,000,000 trials, any result within <strong>±0.0%</strong> of the expected value
+  is normal random variation — not a flaw in the math.
+  The expected values are exactly <strong>33.3%</strong> (stay) and <strong>66.7%</strong> (switch).<br><br>
+  Try running 100 trials vs. 10,000 and watch the margin shrink.
+  That is the instrument becoming more precise.
+</div>
+
+<h2>Was the prize placed fairly?</h2>
+<table>
+  <tr><th>Door</th><th>Prize count</th><th>Rate</th><th>Expected</th><th>Visual</th></tr>
+  <tr><td>Door 1</td><td>33,335,034</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:22px;width:100%;"><div style="background:#3498db;width:33.3%;height:22px;border-radius:4px;"></div></div></td></tr>
+<tr><td>Door 2</td><td>33,327,409</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:22px;width:100%;"><div style="background:#3498db;width:33.3%;height:22px;border-radius:4px;"></div></div></td></tr>
+<tr><td>Door 3</td><td>33,337,557</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:22px;width:100%;"><div style="background:#3498db;width:33.3%;height:22px;border-radius:4px;"></div></div></td></tr>
+</table>
+
+<h2>Did the player pick fairly?</h2>
+<table>
+  <tr><th>Door</th><th>First pick</th><th>Rate</th><th>Expected</th><th>Visual</th></tr>
+  <tr><td>Door 1</td><td>33,331,223</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:22px;width:100%;"><div style="background:#9b59b6;width:33.3%;height:22px;border-radius:4px;"></div></div></td></tr>
+<tr><td>Door 2</td><td>33,328,122</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:22px;width:100%;"><div style="background:#9b59b6;width:33.3%;height:22px;border-radius:4px;"></div></div></td></tr>
+<tr><td>Door 3</td><td>33,340,655</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:22px;width:100%;"><div style="background:#9b59b6;width:33.3%;height:22px;border-radius:4px;"></div></div></td></tr>
+</table>
+
+<h2>Why does switching win more often?</h2>
+<p>
+  When you first pick a door, you have a <strong>1-in-3 chance</strong> of being right —
+  meaning there is a <strong>2-in-3 chance</strong> the prize is behind one of the other two.
+  When the host opens a losing door, that 2-in-3 probability does not disappear.
+  It <em>collapses onto the one remaining closed door</em>.
+  Switching claims that 2-in-3 probability. Staying keeps your original 1-in-3.
+</p>
+<p>
+  The simulation does not prove <em>why</em> — it just shows you the <em>shape</em> of what
+  happens when you run the experiment many times. Mathematics explains why.
+  Code automates the drudgery of checking.
+</p>
+
+<div class="quote">
+  <strong>"All simulations are wrong. Some are useful."</strong><br>
+  — after George Box<br><br>
+  This program cannot prove the Monty Hall result from first principles.
+  It can show you that, over many trials with a fair random setup,
+  the numbers land close to what the math predicts.
+  That is what instruments do — they make invisible things visible enough to think about.
+  The precision of the instrument depends on how many trials you run.
+  Your curiosity decides how far to push it.
+</div>
+
+<div class="footer">
+  Generated by Opus_monty_hall · Aider 101 Day 0 · 2026-08-29 21:37
+</div>
+</body>
+</html>
