@@ -570,3 +570,171 @@ def main(argv: Sequence[str] | None = None) -> None:
 if __name__ == "__main__":
     main()
 j_eve@Grace:C:\Users\j_eve\git\aider_day_00\monty_hall_demo>
+
+
+
+now trying to use aider
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\monty_hall_demo> ls
+
+    Directory: C:\Users\j_eve\git\aider_day_00\monty_hall_demo
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/30/2026  6:02 PM                __pycache__
+d----           8/30/2026  5:56 PM                example_prep
+-a---           8/30/2026  5:56 PM            726 AIDER_REQUEST_1.md
+-a---           8/30/2026  5:56 PM            703 AIDER_REQUEST_2_RETRY.md
+-a---           8/30/2026  5:56 PM           1162 AIDER_REQUEST_2.md
+-a---           8/30/2026  5:56 PM             29 chatgpt_monty_hall.py
+-a---           8/30/2026  6:06 PM            599 day00_seed_20260830.html
+-a---           8/30/2026  5:56 PM           1429 MONTY_HALL_SPEC.md
+-a---           8/30/2026  5:56 PM           8226 monty_hall.py
+-a---           8/30/2026  5:56 PM           3271 test_monty_hall.py
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\monty_hall_demo> cat .\AIDER_REQUEST_1.md
+Implement only the first pass of the Monty Hall demo in monty_hall.py.
+
+Requirements:
+
+- use only Python's standard library;
+- create a playable console game with doors 1, 2, and 3;
+- place one prize and two goats randomly;
+- accept a valid player door choice;
+- have the host reveal one losing door that was not chosen;
+- ask whether the player wants to stay or switch;
+- reveal the selected door and whether the player won; and
+- keep the code small and readable for a beginning programming student.
+
+Reject invalid door and stay-or-switch input with a clear retry. Do not add
+simulation mode yet. Do not edit MONTY_HALL_SPEC.md or any other file. Before
+editing, state the single file you expect to change.
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\monty_hall_demo> cd ..
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00> ls
+
+    Directory: C:\Users\j_eve\git\aider_day_00
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/30/2026  5:56 PM                legal_and_data_context
+d----           8/30/2026  6:02 PM                monty_hall_demo
+d----           8/30/2026  5:56 PM                process
+d----           8/30/2026  5:56 PM                recording
+d----           8/30/2026  5:56 PM                student
+-a---           8/30/2026  5:56 PM           4855 .gitignore
+-a---           8/30/2026  6:09 PM          26560 jeremy_notes.md
+-a---           8/30/2026  5:56 PM           1325 LICENSE
+-a---           8/30/2026  5:56 PM           3229 README.md
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00> mkdir jeremy_example
+
+    Directory: C:\Users\j_eve\git\aider_day_00
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d----           8/30/2026  6:10 PM                jeremy_example
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00> cd .\jeremy_example\
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example>
+
+getting help from chatGPT.
+
+setting up a jeremy playground.
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> @'
+>> """Jeremy's Monty Hall example."""
+>> '@ | Set-Content -Encoding utf8 .\monty_hall.py
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> ls
+
+    Directory: C:\Users\j_eve\git\aider_day_00\jeremy_example
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/30/2026  6:14 PM             36 monty_hall.py
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> git status --short
+?? ./
+?? ../jeremy_notes.md
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> cd ..
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00> git add .
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00> git commit -m "adding a version for jeremy to play around wiht."
+[main fc602d2] adding a version for jeremy to play around wiht.
+ 2 files changed, 573 insertions(+)
+ create mode 100644 jeremy_example/monty_hall.py
+ create mode 100644 jeremy_notes.md
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00> git push
+Enumerating objects: 6, done.
+Counting objects: 100% (6/6), done.
+Delta compression using up to 24 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (5/5), 7.38 KiB | 7.38 MiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:jeremy-evert/aider_day_00.git
+   edc7335..fc602d2  main -> main
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00>
+
+
+I started aider poorly. I went looking for a local model.
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> ls
+
+    Directory: C:\Users\j_eve\git\aider_day_00\jeremy_example
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a---           8/30/2026  6:14 PM             36 monty_hall.py
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> aider .\monty_hall.py
+──────────────────────────────────────────────────────────────────────────────────────────────────────
+Using gpt-4o model with API key from environment.
+Aider v0.86.2
+Main model: gpt-4o with diff edit format
+Weak model: gpt-4o-mini
+Git repo: ..\.git with 37 files
+Repo-map: using 4096 tokens, auto refresh
+Added jeremy_example\monty_hall.py to the chat.
+Note: in-chat filenames are always relative to the git working dir, not the current working dir.
+Cur working dir: C:\Users\j_eve\git\aider_day_00\jeremy_example
+Git working dir: C:\Users\j_eve\git\aider_day_00
+──────────────────────────────────────────────────────────────────────────────────────────────────────
+jeremy_example\monty_hall.py
+> /exit
+
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example> ollama list
+NAME                                      ID              SIZE      MODIFIED
+qwen2.5-coder-3b-cpu:latest               bab40fcf8d90    1.9 GB    2 days ago
+qwen3-4b-cpu:latest                       06063837c0bb    2.5 GB    2 days ago
+qwen3-1.7b-cpu:latest                     73611865ca67    1.4 GB    2 days ago
+qwen2.5-coder-1.5b-instruct-cpu:latest    434849506e25    986 MB    2 days ago
+qwen3-8b-cpu:latest                       ce76f2009a17    5.2 GB    2 days ago
+qwen2.5-coder-7b-cpu:latest               e531e7a21245    4.7 GB    2 days ago
+qwen2.5-coder:7b                          dae161e27b0e    4.7 GB    2 days ago
+qwen3:4b                                  359d7dd4bcda    2.5 GB    2 days ago
+qwen2.5-coder:3b                          f72c60cabf62    1.9 GB    2 days ago
+qwen2.5-coder:1.5b-instruct               d7372fd82851    986 MB    2 days ago
+qwen3:1.7b                                8f68893c685c    1.4 GB    4 days ago
+qwen3:8b                                  500a1f067a9f    5.2 GB    4 days ago
+llama3.2:3b                               a80c4f17acd5    2.0 GB    6 months ago
+mistral:7b                                6577803aa9a0    4.4 GB    6 months ago
+phi3:mini                                 4f2222927938    2.2 GB    6 months ago
+llama3.1:8b                               46e0c10c039e    4.9 GB    6 months ago
+qwen2.5:7b                                845dbda0ea48    4.7 GB    6 months ago
+llama3.1:8b-cpu                           a80b1d017503    4.9 GB    6 months ago
+qwen2.5:7b-cpu                            c86abdf83e54    4.7 GB    6 months ago
+phi3:mini-cpu                             a5854b8852a2    2.2 GB    6 months ago
+mistral:7b-cpu                            9ec6dcbc1ecd    4.4 GB    6 months ago
+llama3.2:3b-cpu                           19232f73c6fc    2.0 GB    6 months ago
+nomic-embed-text:latest                   0a109f422b47    274 MB    6 months ago
+qwen2.5-coder:1.5b-base                   02e0f2817a89    986 MB    6 months ago
+mistral:latest                            6577803aa9a0    4.4 GB    7 months ago
+llama3:latest                             365c0bd3c000    4.7 GB    7 months ago
+deepseek-coder:33b                        acec7c0b0fd9    18 GB     9 months ago
+codellama:13b                             9f438cb9cd58    7.4 GB    9 months ago
+llama3:8b                                 365c0bd3c000    4.7 GB    9 months ago
+llama3.2:1b                               baf6a787fdff    1.3 GB    9 months ago
+j_eve@Grace:C:\Users\j_eve\git\aider_day_00\jeremy_example>
+
+going back to chatGPT.
+
+
