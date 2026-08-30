@@ -45,6 +45,16 @@ This is a transparent teaching workshop, not a claim that Aider is the
 strongest coding agent. Deliberate friction—small prompts, visible diffs,
 RED/GREEN tests, and separate proof—is educational.
 
+## Institutional AI: whose system are you using?
+
+If you use Microsoft Copilot through a SWOSU account, pause before entering
+real coursework, personal data, University data, or someone else's data. Single
+sign-on identifies you; it does not make the service your personal system.
+Read the [legal and data context](legal_and_data_context/README.md) for the
+plain-English four-layer explanation, the official Microsoft/SWOSU sources,
+and the limits of what we can verify about the SWOSU tenant. The coding lesson
+can start immediately, but this context matters before using institutional AI.
+
 ## Find the deeper trail
 
 - `student/` — the direct student lesson, tests, and safe prompt.
