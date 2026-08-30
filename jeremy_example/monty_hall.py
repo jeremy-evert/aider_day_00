@@ -1,1 +1,1 @@
-"""Jeremy's Monty Hall example."""
+"""Jeremy's local-model Monty Hall example."""
