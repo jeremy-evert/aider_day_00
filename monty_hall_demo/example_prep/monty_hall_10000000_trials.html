@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Monty Hall — 10,000,000 Trials</title>
+<style>
+    body    { font-family: system-ui, sans-serif; max-width: 900px;
+               margin: 40px auto; padding: 0 24px; background: #f7f7f7; color: #222; }
+    h1      { color: #2c3e50; margin-bottom: 4px; }
+    h2      { color: #2c3e50; border-bottom: 2px solid #ddd;
+               padding-bottom: 6px; margin-top: 36px; }
+    table   { border-collapse: collapse; width: 100%; margin-top: 12px; }
+    th, td  { padding: 9px 14px; text-align: left; border-bottom: 1px solid #ddd; }
+    th      { background: #2c3e50; color: #fff; font-weight: 600; }
+    tr:nth-child(even) { background: #efefef; }
+    .hero   { display: flex; gap: 24px; margin: 24px 0; flex-wrap: wrap; }
+    .card   { flex: 1; min-width: 200px; border-radius: 8px; padding: 20px 24px;
+               color: white; text-align: center; }
+    .card h3    { margin: 0 0 6px; font-size: 1rem; opacity: .85; }
+    .card p     { margin: 0; font-size: 2.4rem; font-weight: 700; }
+    .card small { font-size: 0.9rem; opacity: .8; }
+    .stay    { background: #e74c3c; }
+    .switch  { background: #27ae60; }
+    .quote   { background: #eaf4fb; border-left: 5px solid #3498db;
+                padding: 14px 20px; margin: 28px 0; font-style: italic; }
+    .warn    { background: #fef9e7; border-left: 5px solid #f1c40f;
+                padding: 14px 20px; margin: 28px 0; }
+    .courses { display: flex; gap: 16px; flex-wrap: wrap; margin: 20px 0; }
+    .course  { flex: 1; min-width: 220px; border-radius: 6px; padding: 14px 18px;
+                border: 2px solid #ddd; background: white; }
+    .course h4 { margin: 0 0 8px; color: #2c3e50; }
+    .course p  { margin: 0; font-size: 0.9em; color: #444; line-height: 1.6; }
+    td:last-child { width: 200px; }
+    .footer  { color: #aaa; font-size: 0.82em; margin-top: 48px; border-top: 1px solid #ddd;
+                padding-top: 16px; }
+    </style>
+</head>
+<body>
+
+<h1>🎭 Monty Hall Simulation</h1>
+<p style="color:#666">2026-08-30 18:53 &nbsp;·&nbsp; <strong>10,000,000 trials</strong></p>
+
+<div class="hero">
+  <div class="card stay">
+    <h3>Always Stay</h3>
+    <p>33.3%</p>
+    <small>3,334,355 wins / 10,000,000 trials</small>
+  </div>
+  <div class="card switch">
+    <h3>Always Switch</h3>
+    <p>66.7%</p>
+    <small>6,665,645 wins / 10,000,000 trials</small>
+  </div>
+</div>
+
+<div class="warn">
+  <strong>Margin of error (95% confidence): ±0.031%</strong><br>
+  With 10,000,000 trials, any result within <strong>±0.031%</strong> of the expected
+  value is normal random variation — not a flaw in the math.<br>
+  Expected: <strong>33.3%</strong> stay &nbsp;·&nbsp; <strong>66.7%</strong> switch.<br><br>
+  To halve your uncertainty, run <strong>4× as many trials</strong> — because uncertainty
+  shrinks with the <em>square root</em> of n, not n itself.
+  Precision is expensive. Computers are cheap.
+</div>
+
+<h2>Was the prize placed fairly?</h2>
+<table>
+  <tr><th>Door</th><th>Prize count</th><th>Rate</th><th>Expected</th><th>Visual</th></tr>
+  <tr><td>Door 1</td><td>3,333,752</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:20px;width:100%;"><div style="background:#3498db;width:33.3%;height:20px;border-radius:4px;"></div></div></td></tr>
+  <tr><td>Door 2</td><td>3,331,149</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:20px;width:100%;"><div style="background:#3498db;width:33.3%;height:20px;border-radius:4px;"></div></div></td></tr>
+  <tr><td>Door 3</td><td>3,335,099</td><td>33.4%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:20px;width:100%;"><div style="background:#3498db;width:33.4%;height:20px;border-radius:4px;"></div></div></td></tr>
+</table>
+
+<h2>Did the player pick fairly?</h2>
+<table>
+  <tr><th>Door</th><th>First pick</th><th>Rate</th><th>Expected</th><th>Visual</th></tr>
+  <tr><td>Door 1</td><td>3,332,381</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:20px;width:100%;"><div style="background:#9b59b6;width:33.3%;height:20px;border-radius:4px;"></div></div></td></tr>
+  <tr><td>Door 2</td><td>3,334,031</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:20px;width:100%;"><div style="background:#9b59b6;width:33.3%;height:20px;border-radius:4px;"></div></div></td></tr>
+  <tr><td>Door 3</td><td>3,333,588</td><td>33.3%</td><td>~33.3%</td><td><div style="background:#e8e8e8;border-radius:4px;height:20px;width:100%;"><div style="background:#9b59b6;width:33.3%;height:20px;border-radius:4px;"></div></div></td></tr>
+</table>
+
+
+
+<h2>Why does switching win more often?</h2>
+<p>
+  When you first pick a door, you have a <strong>1-in-3 chance</strong> of being right —
+  meaning there is a <strong>2-in-3 chance</strong> the prize is behind one of the other two doors.
+  When the host opens a losing door, that 2/3 probability does not vanish.
+  It <em>collapses onto the one remaining closed door.</em>
+  Switching claims that 2/3 probability. Staying keeps your original 1/3.
+</p>
+<p>
+  The simulation cannot prove <em>why</em> — it shows you the <em>shape</em> of what happens
+  at scale. Mathematics explains why. Code automates the drudgery of checking.
+  Your curiosity decides how far to push it.
+</p>
+
+<div class="quote">
+  <strong>"All simulations are wrong. Some are useful."</strong><br>
+  — after George Box<br><br>
+  This program cannot prove the Monty Hall result from first principles.
+  It shows you that over many trials, the numbers land close to what the math predicts.
+  That is what instruments do — they make invisible things visible enough to think about.
+  A microscope does not explain biology. It makes cells visible enough to reason about.
+  This simulation does not explain probability. It makes the pattern visible enough to question.
+</div>
+
+<h2>The same code, three different lenses</h2>
+<div class="courses">
+  <div class="course">
+    <h4>📘 CS 1 — First Programs</h4>
+    <p>You just wrote a probability experiment with loops, functions, and input validation.
+       The computer ran 10,000,000 trials in the time it takes to blink.
+       That is the point of code: delegate the drudgery, keep the reasoning.</p>
+  </div>
+  <div class="course">
+    <h4>📗 Discrete Structures</h4>
+    <p>The sample space has exactly 9 equally-likely outcomes (3 prize doors × 3 player picks).
+       Enumerate them by hand. Count the switching wins. Verify that the math and the
+       simulation agree — and explain why they <em>must</em>.</p>
+  </div>
+  <div class="course">
+    <h4>📙 Computer Architecture</h4>
+    <p>One CPU core ran all 10,000,000 trials while the other cores sat idle.
+       How would you redesign this simulation to use all cores in parallel?
+       What would the speedup formula look like? Start with Amdahl's Law
+       and tell me where the limit is.</p>
+  </div>
+</div>
+
+<div class="footer">
+  Opus_monty_hall_0_5_0 &nbsp;·&nbsp; Aider 101 Day 0 &nbsp;·&nbsp; 2026-08-30 18:53<br>
+  Built iteratively with Olivia (Copilot) as Shot 1 of a three-shot prompt engineering exercise.
+  Shot 2: ChatGPT Think Deeper builds this from a spec. Shot 3: Aider + local CPU model builds it from a tight prompt.
+</div>
+</body>
+</html>
